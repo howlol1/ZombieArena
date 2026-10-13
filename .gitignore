@@ -1,0 +1,13 @@
+@"
+.vs/
+Debug/
+Release/
+x64/
+*.user
+*.vcxproj.user
+*.log
+*.pdb
+*.obj
+*.ilk
+*.tlog
+"@ | Set-Content .gitignore
