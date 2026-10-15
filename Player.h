@@ -35,4 +35,61 @@ private:
 	float m_Speed;
 	// All our public functions next
 
+public:
+
+	Player();
+
+	void spawn(IntRect arena, Vector2f resolution, int tileSize);
+
+	// Handle the player getting hit by a zombie
+	bool hit(Time timeHit);
+
+	// How long ago was the player last hit
+	Time getLastHitTime();
+
+	// Where is the player
+	FloatRect getPosition();
+
+	// Where is the center of the player
+	Vector2f getCenter();
+
+	// Which angle is the player facing
+	float getRotation();
+
+	// Send a copy of the sprite to main
+	Sprite getSprite();
+
+	// How much health has the player currently got?
+	int getHealth();
+
+	// The next four functions move the player
+	void moveLeft();
+
+	void moveRight();
+
+	void moveUp();
+
+	void moveDown();
+
+	// Stop the player moving in a specific direction
+	void stopLeft();
+
+	void stopRight();
+
+	void stopUp();
+
+	void stopDown();
+
+	// We will call this function once every frame
+	void update(float elapsedTime, Vector2i mousePosition);
+
+	// Give player a speed boost
+	void upgradeSpeed();
+
+	// Give the player some health
+	void upgradeHealth();
+
+	// Increase the maximum amount of health the player can have
+	void increaseHealthLevel(int amount);
+
 };
