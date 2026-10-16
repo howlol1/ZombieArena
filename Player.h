@@ -8,12 +8,13 @@ private:
 	const float START_SPEED = 200;
 	const float START_HEALTH = 100;
 
-	Vector2f m_Position;
-	// The sprite
-	Sprite m_Sprite;
 	// And a texture
 	// !!Watch this space – Changes here soon
 	Texture m_Texture;
+	Vector2f m_Position;
+	// The sprite
+	Sprite m_Sprite;
+
 	// What is the screen resolution
 	Vector2f m_Resolution;
 	// What size is the current arena
