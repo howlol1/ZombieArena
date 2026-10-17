@@ -5,6 +5,14 @@
 
 using namespace std;
 
+Zombie::Zombie()
+	: m_Sprite(TextureHolder::GetTexture("graphics/bloater.png")),
+	m_Position(0.f, 0.f),
+	m_Speed(0.f),
+	m_Health(0.f),
+	m_Alive(true)
+{
+}
 
 void Zombie::spawn(float startX, float startY, int type, int seed)
 {

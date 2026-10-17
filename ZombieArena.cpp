@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "ZombieArena.h"
 #include "Player.h"
+#include "Zombie.h"
 #include "TextureHolder.h"
 #include <iostream>
 
@@ -38,6 +39,11 @@ int main() {
 	// Load the texture for our background vertex array
 	Texture textureBackground;
 	textureBackground.loadFromFile("graphics/background_sheet.png");
+
+	// Prepare for a horde of zombies
+	int numZombies;
+	int numZombiesAlive;
+	Zombie* zombies = NULL;
 
 	// The main game loop
 
@@ -97,6 +103,15 @@ int main() {
 
 						// Spawn the player in the middle of the arena
 						player.spawn(arena, resolution, tileSize);
+
+						// Create a horde of zombies
+						numZombies = 10;
+
+						// Delete the previously allocated memory (if it exists)
+						delete[] zombies;
+						zombies = createHorde(numZombies, arena);
+						numZombiesAlive = numZombies;
+
 
 						// Reset the clock so there isn't a frame jump
 						clock.restart();

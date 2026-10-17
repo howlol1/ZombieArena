@@ -4,11 +4,8 @@
 
 Zombie* createHorde(int numZombies, IntRect arena)
 {
-	// To an array of pointers:
-	Zombie** zombies = new Zombie * [numZombies];
-	for (int i = 0; i < numZombies; i++) {
-		zombies[i] = new Zombie(); // (Make sure you have defined a default constructor or initialize them properly)
-	}
+	
+	Zombie* zombies = new Zombie[numZombies];   // uses the default constructor
 
 	int maxY = arena.size.y - 20;
 	int minY = arena.position.y + 20;
