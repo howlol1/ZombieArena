@@ -1,7 +1,13 @@
 #include "player.h"
+#include <iostream>
 
 Player::Player() : m_Sprite(m_Texture){
-	m_Texture.loadFromFile("graphics/player.png");
+	//m_Texture.loadFromFile("graphics/player.png");
+	if (!m_Texture.loadFromFile("graphics/player.png"))
+	{
+		std::cout << "Failed to load texture. Working dir: "
+			<< std::filesystem::current_path() << "\n";
+	}
 	m_Sprite.setTexture(m_Texture, true);
 	m_Sprite.setOrigin({ 25,25 });
 
